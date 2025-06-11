@@ -33,10 +33,20 @@ sub encode_safer {
 
 =head1 DESCRIPTION
 
+- Multiple non-alphanumeric characters are converted to a single underscore
+- Dashes are converted to underscore
+
 
 =head1 FUNCTIONS
 
 =head2 encode_safer
 
+Arguments:
+
+=over
+
+=item * lc
+
+=back
 
 =cut
