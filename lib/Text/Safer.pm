@@ -15,7 +15,7 @@ our @EXPORT_OK = qw(encode_safer);
 
 sub encode_safer {
     my ($text, $encoding, $encoding_args) = @_;
-    $encoding //= "alphanum_kebab";
+    $encoding //= "alphanum_kebab_nodashend_lc";
     $encoding_args //= {};
 
     my $module = "Text::Safer::$encoding";
@@ -33,7 +33,7 @@ sub encode_safer {
 
  use Text::Safer qw(encode_safer);
 
- my $safer1 = encode_safer("Foo bar!!!");                            # "Foo-bar-", default encoding is "alphanum_kebab"
+ my $safer1 = encode_safer("Foo bar. baz!!!");                       # "foo-bar-baz", default encoding is "alphanum_kebab_nodashend_lc"
  my $safer2 = encode_safer("Foo bar!!!", "alphanum_snake");          # "Foo_bar_"
  my $safer3 = encode_safer("Foo bar!!!", "alphanum_snake", {lc=>1}); # "foo_bar_"
 
