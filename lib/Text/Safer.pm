@@ -27,7 +27,7 @@ sub encode_safer {
 }
 
 1;
-# ABSTRACT: Convert text to a safer (e.g. more restricted) encoding
+# ABSTRACT: Convert text with one of several available methods, usually to a safer/more restricted encoding, e.g. for filenames
 
 =head1 SYNOPSIS
 

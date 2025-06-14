@@ -10,6 +10,7 @@ use warnings;
 # VERSION
 
 our %META = (
+    summary => 'Like alphanum_kebab, but additionally lower case & remove dash at the beginning & end of text, e.g. "Foo Bar, Co., Ltd." -> "foo-bar-co-ltd"',
     args => {
     },
 );
@@ -25,19 +26,12 @@ sub encode_safer {
 }
 
 1;
-# ABSTRACT: Convert text to a safer (e.g. more restricted) encoding using only lower alphanumeric and dash characters, avoid dash at the beginning/end of text
+# ABSTRACT:
 
 =head1 SYNOPSIS
 
- Input text             Output
- ----------             ------
- Foo Bar, Co., Ltd.     foo-bar-co-ltd
-
 
 =head1 DESCRIPTION
-
-- Multiple non-alphanumeric characters are converted to a single dash
-- Underscores are not converted to dash
 
 
 =head1 FUNCTIONS
@@ -47,8 +41,6 @@ sub encode_safer {
 Arguments:
 
 =over
-
-=item * lc
 
 =back
 

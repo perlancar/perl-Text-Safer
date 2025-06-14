@@ -10,6 +10,7 @@ use warnings;
 # VERSION
 
 our %META = (
+    summary => 'Replace sequences of non-alphanumeric characters (including dashes) with a single underscore, e.g. Foo-Bar_Baz!!!Qux-. -> Foo_Bar_Baz_Qux_',
     args => {
         lc => {
             schema => 'bool*',
@@ -26,15 +27,12 @@ sub encode_safer {
 }
 
 1;
-# ABSTRACT: Convert text to a safer (e.g. more restricted) encoding using only alphanumeric and underscore characters
+# ABSTRACT:
 
 =head1 SYNOPSIS
 
 
 =head1 DESCRIPTION
-
-- Multiple non-alphanumeric characters are converted to a single underscore
-- Dashes are converted to underscore
 
 
 =head1 FUNCTIONS
